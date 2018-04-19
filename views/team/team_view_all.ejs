@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team - View All</title>
+</head>
+        <body>
+            <h1>Teams</h1>
+
+
+            <table border="1">
+                <tr>
+                    <th>City</th>
+                    <th>Name</th>
+                    <th>League</th>
+                    <th>Division</th>
+                </tr>
+
+                <% for(var i =0; i < teams.length; i++) {%>
+                    <tr>
+                      <td><%= teams[i].city %></td>
+                        <td><%= teams[i].team_name %></td>
+                        <td><%= teams[i].league %></td>
+                        <td><%= teams[i].division %></td>
+                    </tr>
+                <% } %>
+            </table>
+        </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game - View All</title>
+</head>
+<body>
+<h1>Games</h1>
+<p>
+    For some reason the timestamps are stored in a
+    different format than I entered them
+    this is causing problems for entering values in
+    my team_game and player_game tables because mysql
+    doesn't recognize the newly formatted timestamp in my
+    queries :( I don't know how to solve this issue. However
+    I was able to test the rest of the code by hardcoding the
+    stadium_id and date_time values in the html and the rest works. So If
+    you could help me figure out how to change the timestamp format
+    or any other workarounds (aside from changing the table value because
+    then I would have to delete and re-enter all of my values for the rest of
+    my tables) I would appreciate it. Thanks
+</p>
+
+<table border="1">
+    <tr>
+        <th>Stadium ID</th>
+        <th>Date/Time</th>
+        <th>Runs Home</th>
+        <th>Runs Away</th>
+        <th>Add Team</th>
+        <th>Add Player</th>
+    </tr>
+
+    <% for(var i =0; i < games.length; i++) {%>
+    <tr>
+        <td><%= games[i].stadium_id %></td>
+        <td><%= games[i].date_time %></td>
+        <td><%= games[i].runs_home %></td>
+        <td><%= games[i].runs_away %></td>
+        <td>
+            <a href="/game/add_team/?stadium_id=<%= games[i].stadium_id%>&date_time=<%= games[i].date_time%>">
+                Add
+            </a>
+        </td>
+        <td>
+            <a href="/game/add_player/?stadium_id=<%= games[i].stadium_id%>&date_time=<%= games[i].date_time%>">
+                Add
+            </a>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player - View All</title>
+</head>
+<body>
+<h1>Players</h1>
+
+
+<table border="1">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Bats</th>
+        <th>Throws</th>
+        <th>Add Team</th>
+        <th>Add Position</th>
+    </tr>
+
+    <% for(var i =0; i < players.length; i++) {%>
+    <tr>
+        <td><%= players[i].first_name %></td>
+        <td><%= players[i].last_name %></td>
+        <td><%= players[i].bats %></td>
+        <td><%= players[i].throws %></td>
+        <td>
+            <a href="/player/add_team/?player_id=<%= players[i].player_id %>">
+                Add
+            </a>
+        </td>
+        <td>
+            <a href="/player/add_position/?player_id=<%= players[i].player_id %>">
+                Add
+            </a>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+</html>
