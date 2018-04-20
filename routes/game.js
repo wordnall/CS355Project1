@@ -66,7 +66,6 @@ router.get('/add_team', function(req, res){
     });
 });
 
-
 router.get('/associate_team', function(req, res){
     game_dal.associate_team(req.query, function(err, result){
         if(err){

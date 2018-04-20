@@ -6,8 +6,8 @@
 <body>
 <h1>Add Player for Game</h1>
 <form action="/game/associate_player" method="get">
-    <input type="hidden" id="stadium_id" name="stadium_id" value="1<%#= game.stadium_id %>">
-    <input type="hidden" id="date_time" name="date_time" value="2013-1-1 12:00<%#= game.date_time %>">
+    <input type="hidden" id="stadium_id" name="stadium_id" value="<%= game.stadium_id %>">
+    <input type="hidden" id="date_time" name="date_time" value="<%= game.date_time %>">
     Player:
     <select name="player_id">
         <% for (var i = 0; i < players.length; i++) {%>
